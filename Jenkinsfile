@@ -1,10 +1,11 @@
 pipeline {
          agent any
+         stage('Cloning our Git') {
+         steps {
+         git 'https://github.com/SkanderMez/jenkinstest.git'
+         }
+         }
          stages {
-                  stage('Cloning our Git') {
-                  steps {
-                  git 'https://github.com/SkanderMez/jenkinstest.git'
-                  }
                  stage('build stage') {
                  steps {
                      sh'id'
@@ -18,5 +19,5 @@ pipeline {
                     echo 'Delpoying Spring boot application '
                  }
                  }
-              }
+         }
 }
