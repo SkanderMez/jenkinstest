@@ -15,7 +15,7 @@ pipeline {
                  }
                  stage('Deployment stage ') {
                  steps {
-                    sh 'docker build -t  . && docker run -it '
+                    sh 'docker build -t . && docker run -it '
                     echo 'Delpoying Spring boot application '
                  }
                  }
