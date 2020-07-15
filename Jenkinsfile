@@ -10,7 +10,7 @@ pipeline {
                  }
                  stage('Deployment stage ') {
                  steps {
-                    sh 'cd target &&  java -jar demo-0.0.1-SNAPSHOT.jar -S'
+                    sh 'cd target && sudo java -jar demo-0.0.1-SNAPSHOT.jar -S'
                     echo 'Delpoying Spring boot application '
                  }
                  }
