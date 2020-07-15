@@ -1,39 +1,15 @@
 pipeline {
          agent any
          stages {
-                 stage('One') {
+                 stage('build stage') {
                  steps {
-                     echo 'Hi, this is Zulaikha from edureka'
+                     echo 'Building Spring Boot application '
                  }
                  }
-                 stage('Two') {
+                 stage('Deployment stage ') {
                  steps {
-                    input('Do you want to proceed?')
+                    echo 'Delpoying Spring boot application '
                  }
                  }
-                 stage('Three') {
-                 when {
-                       not {
-                            branch "master"
-                       }
-                 }
-                 steps {
-                       echo "Hello"
-                 }
-                 }
-                 stage('Four') {
-                 parallel {
-                            stage('Unit Test') {
-                           steps {
-                                echo "Running the unit test..."
-                           }
-                           }
-                            stage('Integration test') {
-                              steps {
-                                echo "Running the integration test..."
-                              }
-                           }
-                           }
-                           }
               }
 }
