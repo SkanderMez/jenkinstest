@@ -3,7 +3,7 @@ pipeline {
          stages {
                  stage('build stage') {
                  steps {
-                     sh 'cd target && mvn clean install'
+                     sh 'mvn clean install'
                      echo 'Building Spring Boot application '
                  }
                  }
