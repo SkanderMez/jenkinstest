@@ -5,7 +5,7 @@ pipeline {
                   steps {
                   git 'https://github.com/SkanderMez/jenkinstest.git'
                   }
-                  }
+
                  stage('build stage') {
                  steps {
                      sh'id'
@@ -15,7 +15,7 @@ pipeline {
                  }
                  stage('Deployment stage ') {
                  steps {
-                    sh 'docker run --rm -it $(docker build -q .)'
+                    sh 'docker build -t  . && docker run -it '
                     echo 'Delpoying Spring boot application '
                  }
                  }
